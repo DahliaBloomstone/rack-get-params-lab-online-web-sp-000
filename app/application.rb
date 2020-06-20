@@ -12,13 +12,14 @@ class Application
         resp.write "#{item}\n"
       end
     elsif req.path.match(/search/) #GET parameters key/value pairs.
+      #search route that accepts a GET parameter w/ the key q.
 
       search_term = req.params["q"] #key = q, value = apples, carrots, or pears
 
       resp.write handle_search(search_term) #not sure what this does
 
       def handle_search(search_term)
-        if @@items.include?(search_term) #? 
+        if @@items.include?(search_term) #?
           return "#{search_term} is one of our items" #we can do different things depending on the search path
         else
           return "Couldn't find #{search_term}"
