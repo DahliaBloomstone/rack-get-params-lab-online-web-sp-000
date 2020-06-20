@@ -18,8 +18,8 @@ class Application
       resp.write handle_search(search_term) #not sure what this does
 
       def handle_search(search_term)
-        if @@items.include?(search_term)
-          return "#{search_term} is one of our items" #we can do different things depending on the search path 
+        if @@items.include?(search_term) #? 
+          return "#{search_term} is one of our items" #we can do different things depending on the search path
         else
           return "Couldn't find #{search_term}"
         end
