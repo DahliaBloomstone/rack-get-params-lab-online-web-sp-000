@@ -7,13 +7,13 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env) #env part of our call function has all info stored in the request
 
-    if req.path.match(/items/) #allows us to see all of our items 
+    if req.path.match(/items/) #allows us to see all of our items
       @@items.each do |item|
         resp.write "#{item}\n"
       end
-    elsif req.path.match(/search/)
+    elsif req.path.match(/search/) #GET parameters key/value pairs.
 
-      search_term = req.params["q"]
+      search_term = req.params["q"] #key = q, value = apples, carrots, or pears 
 
       resp.write handle_search(search_term) #not sure what this does
 
