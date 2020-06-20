@@ -5,9 +5,9 @@ class Application
 
   def call(env)
     resp = Rack::Response.new
-    req = Rack::Request.new(env) #env part of our call function has all info stored in the request 
+    req = Rack::Request.new(env) #env part of our call function has all info stored in the request
 
-    if req.path.match(/items/)
+    if req.path.match(/items/) #allows us to see all of our items 
       @@items.each do |item|
         resp.write "#{item}\n"
       end
