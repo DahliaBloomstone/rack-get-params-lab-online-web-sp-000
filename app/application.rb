@@ -5,7 +5,7 @@ class Application
 
   def call(env)
     resp = Rack::Response.new
-    req = Rack::Request.new(env)
+    req = Rack::Request.new(env) #env part of our call function has all info stored in the request 
 
     if req.path.match(/items/)
       @@items.each do |item|
